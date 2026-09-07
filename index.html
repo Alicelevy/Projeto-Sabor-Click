@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor & Clic - Sistema de Gestão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+        <h1>🍽️ Sabor & Clic</h1>
+        <div class="usuario">
+            <span>👤 Alice (Gerente)</span>
+            <button class="btn-sair" onclick="fazerLogout()">Sair</button>
+        </div>
+    </header>
+
+    <div class="layout">
+
+        <aside class="menu-lateral">
+            <h2>📋 Painel</h2>
+            <nav>
+                <a href="#" class="ativo" data-pagina="inicio">🏠 Início</a>
+                <a href="#" data-pagina="cardapio">📋 Cardápio</a>
+                <a href="#" data-pagina="pedidos">📦 Pedidos</a>
+                <a href="#" data-pagina="cozinha">👨‍🍳 Cozinha</a>
+                <a href="#" data-pagina="reservas">📅 Reservas</a>
+                <a href="#" data-pagina="estoque">📦 Estoque</a>
+                <a href="#" data-pagina="relatorios">📊 Relatórios</a>
+                <a href="#" data-pagina="configuracoes">⚙️ Configurações</a>
+            </nav>
+        </aside>
+
+        <main class="conteudo" id="conteudo">
+            <!-- O conteúdo será renderizado pelo JavaScript -->
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
