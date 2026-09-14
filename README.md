@@ -1,6 +1,4 @@
-# Sabor & Clic
-
-### Projeto Integrador
+### Projeto Integrador - Sabor & Clic
 
 **Gestão para Dark Kitchens e Espaços Gastronômicos**
 
