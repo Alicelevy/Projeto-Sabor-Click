@@ -1,16 +1,16 @@
-# 🍽️ Sabor & Clic
+# Sabor & Clic
 
 ### Projeto Integrador
 
 **Gestão para Dark Kitchens e Espaços Gastronômicos**
 
-## 📌 Sobre o projeto
+## Sobre o projeto
 
 O **Sabor & Clic** é um sistema desenvolvido para auxiliar na gestão de pedidos e pratos de um espaço gastronômico.
 
 O projeto utiliza a arquitetura **MVC**, separando a interface, os dados e as regras de negócio.
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 * HTML5
 * CSS3
@@ -19,7 +19,7 @@ O projeto utiliza a arquitetura **MVC**, separando a interface, os dados e as re
 * Flask
 * JSON
 
-## 📂 Estrutura do Python
+## Estrutura do Python
 
 ```text
 Projeto Integrador/
@@ -33,7 +33,7 @@ Projeto Integrador/
         └── js/
 ```
 
-## ⚙️ Funcionalidades
+## Funcionalidades
 
 * Cadastro e listagem de pratos
 * Criação e consulta de pedidos
@@ -41,7 +41,7 @@ Projeto Integrador/
 * Manipulação da interface com JavaScript
 * Rotas Flask com respostas em JSON
 
-## 🚀 Como executar a parte de Python
+## Como executar a parte de Python
 
 ```bash
 python run.py
@@ -53,7 +53,7 @@ Depois, acesse:
 http://127.0.0.1:5000/
 ```
 
-## 👥 Equipe
+## Equipe
 
 **Projeto Integrador — Sabor & Clic**
 
