@@ -4,64 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sabor & Clic</title>
-
+    <title>Sabor & Clic - Sistema de Gestão</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
 <body>
 
-    <header>
-        <h1>Sabor & Clic</h1>
-        <p>Gestão para Dark Kitchens e Espaços Gastronômicos</p>
+    <header class="topo">
+        <h1>🍽️ Sabor & Clic</h1>
+        <div class="usuario">
+            <span>👤 Alice (Gerente)</span>
+            <button class="btn-sair" onclick="fazerLogout()">Sair</button>
+        </div>
     </header>
 
-    <main>
+    <div class="layout">
 
-        <section id="inicio">
-            <h2>Bem-vindo ao Sabor & Clic!</h2>
-            <p>
-                Sistema para gerenciamento de pedidos e pratos
-                de um espaço gastronômico.
-            </p>
-        </section>
+        <aside class="menu-lateral">
+            <h2>📋 Painel</h2>
+            <nav>
+                <a href="#" class="ativo" data-pagina="inicio">🏠 Início</a>
+                <a href="#" data-pagina="cardapio">📋 Cardápio</a>
+                <a href="#" data-pagina="pedidos">📦 Pedidos</a>
+                <a href="#" data-pagina="cozinha">👨‍🍳 Cozinha</a>
+                <a href="#" data-pagina="reservas">📅 Reservas</a>
+                <a href="#" data-pagina="estoque">📦 Estoque</a>
+                <a href="#" data-pagina="relatorios">📊 Relatórios</a>
+                <a href="#" data-pagina="configuracoes">⚙️ Configurações</a>
+            </nav>
+        </aside>
 
-        <section id="pratos">
-            <h2>Pratos disponíveis</h2>
+        <main class="conteudo" id="conteudo">
+            <!-- O conteúdo será renderizado pelo JavaScript -->
+        </main>
 
-            <div id="lista-pratos">
-                <!-- Os pratos serão inseridos pelo JavaScript -->
-            </div>
-        </section>
-
-        <section id="pedido">
-            <h2>Novo pedido</h2>
-
-            <form id="form-pedido">
-
-                <label for="cliente">Nome do cliente:</label>
-                <input
-                    type="text"
-                    id="cliente"
-                    name="cliente"
-                    required
-                >
-
-                <button type="submit">
-                    Criar pedido
-                </button>
-
-            </form>
-
-            <p id="mensagem"></p>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>Sabor & Clic - Projeto Integrador</p>
-    </footer>
+    </div>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
