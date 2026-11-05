@@ -52,7 +52,7 @@ body {
     padding: 8px 16px;
     border: none;
     border-radius: 6px;
-    background: #f44336;
+    background: #b3261e;
     color: white;
     cursor: pointer;
     font-weight: bold;
@@ -60,7 +60,7 @@ body {
 }
 
 .btn-sair:hover {
-    background: #d32f2f;
+    background: #8e1c16;
 }
 
 /* =========================
@@ -252,23 +252,23 @@ body {
 }
 
 .status-recebido {
-    background-color: #fff3e0;
-    color: #e65100;
+    background-color: #ffe9cc;
+    color: #b5541c;
 }
 
 .status-preparo {
-    background-color: #e3f2fd;
-    color: #0d47a1;
+    background-color: #fbdcc4;
+    color: #a3401a;
 }
 
 .status-pronto {
-    background-color: #e8f5e9;
-    color: #1b5e20;
+    background-color: #f1dcc6;
+    color: #6b3a1f;
 }
 
 .status-entregue {
-    background-color: #f5f5f5;
-    color: #616161;
+    background-color: #efe4da;
+    color: #7a6255;
 }
 
 /* =========================
@@ -295,30 +295,30 @@ body {
 }
 
 .btn-success {
-    background-color: #4caf50;
+    background-color: #8b4513;
     color: white;
 }
 
 .btn-success:hover {
-    background-color: #388e3c;
+    background-color: #6b3410;
 }
 
 .btn-danger {
-    background-color: #f44336;
+    background-color: #b3261e;
     color: white;
 }
 
 .btn-danger:hover {
-    background-color: #d32f2f;
+    background-color: #8e1c16;
 }
 
 .btn-warning {
-    background-color: #ff9800;
+    background-color: #d98e04;
     color: white;
 }
 
 .btn-warning:hover {
-    background-color: #f57c00;
+    background-color: #b87503;
 }
 
 /* =========================
@@ -539,18 +539,18 @@ table .actions button {
 }
 
 .reserva-item .status-reserva.confirmada {
-    background: #e8f5e9;
-    color: #1b5e20;
+    background: #f1dcc6;
+    color: #6b3a1f;
 }
 
 .reserva-item .status-reserva.pendente {
-    background: #fff3e0;
-    color: #e65100;
+    background: #ffe9cc;
+    color: #b5541c;
 }
 
 .reserva-item .status-reserva.cancelada {
-    background: #fce4ec;
-    color: #c62828;
+    background: #f9d6cf;
+    color: #8e1c16;
 }
 
 /* =========================
@@ -589,11 +589,11 @@ table .actions button {
 }
 
 .metrica .variacao.positiva {
-    color: #4caf50;
+    color: #8b4513;
 }
 
 .metrica .variacao.negativa {
-    color: #f44336;
+    color: #b3261e;
 }
 
 /* =========================
