@@ -5,42 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabor & Clic - Sistema de Gestão</title>
-    <link rel="stylesheet"
-        href="{{ url_for('static', filename='css/styles.css') }}"></head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script type="module" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
 
 <body>
 
     <header class="topo">
         <h1>🍽️ Sabor & Clic</h1>
-        <div class="usuario">
-            <span>👤 Alice (Gerente)</span>
-            <button class="btn-sair" onclick="fazerLogout()">Sair</button>
+        <div class="usuario" id="area-usuario" hidden>
+            <span id="nome-usuario"></span>
+            <button type="button" class="btn-sair" id="btn-sair">Sair</button>
         </div>
     </header>
 
-    <div class="layout">
+    <div class="indicador-carregando" id="indicador-carregando" role="status" hidden>⏳ Carregando...</div>
+    <div class="notificacoes" id="notificacoes" aria-live="polite"></div>
+
+    <main class="tela-login" id="tela-login" hidden>
+        <form class="login-card" id="form-login">
+            <h2>🔐 Entrar</h2>
+            <p>Acesse o painel do Sabor & Clic.</p>
+
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" autocomplete="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="login-senha">Senha</label>
+                <input type="password" id="login-senha" name="senha" autocomplete="current-password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Entrar</button>
+
+            <div class="login-dica">
+                <strong>Usuários de teste</strong>
+                <ul>
+                    <li>👑 admin@saborclic.com / admin123</li>
+                    <li>🙋 cliente@saborclic.com / cliente123</li>
+                    <li>👨‍🍳 cozinha@saborclic.com / cozinha123</li>
+                </ul>
+            </div>
+        </form>
+    </main>
+
+    <div class="layout" id="layout" hidden>
 
         <aside class="menu-lateral">
             <h2>📋 Painel</h2>
             <nav>
-                <a href="#" class="ativo" data-pagina="inicio">🏠 Início</a>
+                <a href="#" data-pagina="inicio">🏠 Início</a>
                 <a href="#" data-pagina="cardapio">📋 Cardápio</a>
                 <a href="#" data-pagina="pedidos">📦 Pedidos</a>
                 <a href="#" data-pagina="cozinha">👨‍🍳 Cozinha</a>
                 <a href="#" data-pagina="reservas">📅 Reservas</a>
                 <a href="#" data-pagina="estoque">📦 Estoque</a>
                 <a href="#" data-pagina="relatorios">📊 Relatórios</a>
-                <a href="#" data-pagina="configuracoes">⚙️ Configurações</a>
+                <a href="#" data-pagina="conta">👤 Minha Conta</a>
             </nav>
         </aside>
 
-        <main class="conteudo" id="conteudo">
-            <!-- O conteúdo será renderizado pelo JavaScript -->
-        </main>
+        <main class="conteudo" id="conteudo"></main>
 
     </div>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>
