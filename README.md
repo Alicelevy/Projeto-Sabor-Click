@@ -1,101 +1,53 @@
 # Sabor & Clic
-### Sistema de Gestão para Dark Kitchens e Espaços Gastronômicos
+**Sistema de Gestão para Dark Kitchens e Espaços Gastronômicos**
 
-## 1. Sobre o Projeto
+Projeto Integrador — 2026  
+Instituto Federal de Educação, Ciência e Tecnologia de São Paulo — Campus São Paulo
 
-O Sabor & Clic é um sistema web desenvolvido para auxiliar na gestão de dark kitchens e espaços gastronômicos compartilhados.
+## 1. Sobre o projeto
 
-A aplicação reúne funcionalidades de gerenciamento de cardápio, cadastro e acompanhamento de pedidos, organização da produção da cozinha, agendamento de bancadas e controle de estoque.
+O Sabor & Clic é um sistema web desenvolvido para auxiliar na gestão de espaços gastronômicos e dark kitchens. O sistema permite o gerenciamento de pratos, pedidos, usuários, reservas e estoque.
 
-O projeto foi desenvolvido como parte do Projeto Integrador, utilizando diferentes tecnologias de desenvolvimento web, programação, banco de dados e segurança da informação.
+O projeto utiliza:
+- **Frontend:** HTML5, CSS3 e JavaScript.
+- **Backend:** Python com Flask.
+- **Banco de dados:** MySQL.
+- **Comunicação:** Fetch API e JSON.
 
-## 2. Tecnologias Utilizadas
+## 2. Organização dos arquivos
 
-**Front-end**
-- HTML5
-- CSS3
-- JavaScript ES6+
-- Fetch API
-- JSON
+O arquivo `requirements.txt` está localizado na pasta externa, enquanto o código principal está dentro da pasta `Projeto Integrador`.
 
-**Back-end**
-- Python 3
-- Flask
-- Blueprints
-
-**Banco de dados**
-- MySQL
-- mysql-connector-python
-
-**Segurança**
-- Werkzeug Security para hash de senhas.
-- Flask Sessions para gerenciamento de sessões.
-- Cryptography (Fernet) para criptografia baseada em AES.
-
-## 3. Funcionalidades
-
-- Cadastro e autenticação de clientes.
-- Controle de acesso por perfil: administrador, cliente e cozinheiro.
-- Consulta e gerenciamento de pratos.
-- Criação e acompanhamento de pedidos.
-- Painel de produção da cozinha.
-- Gerenciamento de reservas de bancadas.
-- Controle de estoque e movimentação automática relacionada aos pedidos.
-- Proteção de senhas por hash.
-- Criptografia dos endereços dos usuários.
-
-## 4. Organização do Projeto
+Estrutura simplificada:
 
 ```text
-Projeto Integrador/
-├── app/
-│   ├── controllers/
-│   ├── models/
-│   ├── static/
-│   │   ├── css/
-│   │   └── js/
-│   ├── views/
-│   ├── conexao.py
-│   ├── criptografia.py
-│   └── middlewares.py
-├── database/
-│   └── sabor_clic_banco.sql
-├── .env.example
-├── CONFIGURACAO_MYSQL.txt
-├── configurar_senhas_demo.py
+Pasta principal/
 ├── requirements.txt
-└── run.py
+├── README.md
+└── Projeto Integrador/
+    ├── run.py
+    ├── .env.example
+    ├── CONFIGURACAO_MYSQL.txt
+    ├── database/
+    │   └── sabor_clic_banco.sql
+    └── app/
 ```
 
-## 5. Requisitos para Execução
+## 3. Requisitos para execução
 
-Para executar o sistema, é necessário possuir:
+Antes de iniciar, instale:
+- Python 3;
+- MySQL Server;
+- Um navegador atualizado.
 
-- Python 3 instalado.
-- MySQL Server instalado e em execução.
-- MySQL Workbench ou outra ferramenta para importar o banco.
-- Dependências listadas em `requirements.txt`.
+## 4. Instalação das dependências
 
-## 6. Instalação e Configuração
+Abra o terminal na **pasta principal**, onde está localizado o arquivo `requirements.txt`.
 
-### 6.1. Banco de Dados
-
-1. Abra o MySQL Workbench.
-2. Crie ou selecione uma conexão com o servidor MySQL.
-3. Importe o arquivo `database/sabor_clic_banco.sql`.
-4. Confirme que o banco `sabor_clic` foi criado e que suas tabelas e dados estão disponíveis.
-
-### 6.2. Ambiente Virtual
-
-Abra o terminal na pasta `Projeto Integrador` e execute:
+Crie e ative o ambiente virtual:
 
 ```bash
 python -m venv .venv
-```
-
-Ative o ambiente virtual no Windows:
-
-```bash
 .venv\Scripts\activate
 ```
 
@@ -105,54 +57,64 @@ Instale as dependências:
 python -m pip install -r requirements.txt
 ```
 
-### 6.3. Variáveis de Ambiente
+**Importante:** execute esse comando na pasta em que o `requirements.txt` está localizado, e não dentro de `Projeto Integrador`.
 
-Faça uma cópia do arquivo `.env.example` e renomeie a cópia para `.env`.
+## 5. Configuração do banco de dados
 
-Preencha as variáveis de conexão com o MySQL, a chave secreta do Flask e a chave Fernet.
+1. Inicie o serviço do MySQL.
+2. Abra o MySQL Workbench.
+3. Importe o arquivo `Projeto Integrador/database/sabor_clic_banco.sql`.
+4. Execute o script para criar o banco de dados e suas tabelas.
 
-A variável `FERNET_KEY` deve receber exatamente a mesma chave utilizada para criptografar os endereços presentes no banco SQL fornecido.
+Consulte o arquivo `CONFIGURACAO_MYSQL.txt`, localizado na pasta `Projeto Integrador`, para orientações adicionais.
 
-A chave Fernet deve ser obtida com a equipe responsável pelo projeto por um meio seguro. Não utilize uma chave aleatória diferente.
+## 6. Configuração do arquivo .env
 
-O arquivo `.env` contém informações confidenciais e não deve ser enviado ao repositório público.
+Dentro da pasta `Projeto Integrador`, copie o arquivo `.env.example` e renomeie a cópia para `.env`.
 
-### 6.4. Inicialização
+Configure as variáveis de ambiente com os dados do seu computador:
 
-Com o MySQL em execução e as variáveis configuradas, execute:
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=SUA_SENHA_DO_MYSQL
+DB_NAME=sabor_clic
+SECRET_KEY=SUA_CHAVE_SECRETA
+FERNET_KEY=CHAVE_FERNET_FORNECIDA_PELA_EQUIPE
+```
+
+**Atenção:** a chave `FERNET_KEY` precisa ser a mesma utilizada pela equipe para criptografar os endereços armazenados no banco de dados. Ela deve ser compartilhada separadamente e com segurança. Não utilize uma chave aleatória diferente.
+
+O arquivo `.env` contém informações confidenciais e não deve ser compartilhado publicamente.
+
+## 7. Execução do sistema
+
+Após instalar as dependências e configurar o banco de dados e o arquivo `.env`:
+
+1. No terminal, entre na pasta `Projeto Integrador`:
+
+```bash
+cd "Projeto Integrador"
+```
+
+2. Execute a aplicação:
 
 ```bash
 python run.py
 ```
 
-Acesse pelo navegador:
+3. Com o servidor iniciado, acesse no navegador:
 
+```text
 http://127.0.0.1:5000/
+```
 
-## 7. Banco de Dados
+O MySQL precisa permanecer em execução durante o uso do sistema.
 
-O banco utilizado é o MySQL, com o nome `sabor_clic`.
+## 8. Observações
 
-O arquivo SQL disponibilizado na pasta `database` contém a estrutura das tabelas, os relacionamentos, as triggers e os dados exportados para a versão final do projeto.
-
-## 8. Segurança
-
-O sistema utiliza hash para proteger as senhas dos usuários e criptografia baseada em AES, por meio da biblioteca Fernet, para proteger os endereços armazenados no banco de dados.
-
-As chaves de segurança são configuradas por variáveis de ambiente, não devendo ser inseridas diretamente no código-fonte.
-
-## 9. Equipe
-
-Projeto Integrador — Sabor & Clic.
-
-Integrantes:
-- Alice Peters Gonçalves do Prado Levy
-- Beatriz Sati Minoura
-- Clarice Cortez Generoso
-- Heitor Borges Pinto
-
-Instituto Federal de Educação, Ciência e Tecnologia de São Paulo — Campus São Paulo.
-
-Turma: 2º ano 231.
-
-Ano: 2026.
+- O ambiente virtual `.venv` é criado localmente e não precisa ser enviado na entrega.
+- O arquivo `.env` deve ser configurado individualmente em cada computador.
+- O arquivo `.env.example` serve como modelo de configuração.
+- O banco de dados deve ser importado antes de iniciar a aplicação.
