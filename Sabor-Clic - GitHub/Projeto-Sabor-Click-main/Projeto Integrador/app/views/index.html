@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor & Clic - Sistema de Gestão</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script type="module" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+
+<body>
+
+    <header class="topo">
+        <h1>🍽️ Sabor & Clic</h1>
+        <div class="usuario" id="area-usuario" hidden>
+            <span id="nome-usuario"></span>
+            <button type="button" class="btn-sair" id="btn-sair">Sair</button>
+        </div>
+    </header>
+
+    <div class="indicador-carregando" id="indicador-carregando" role="status" hidden>⏳ Carregando...</div>
+    <div class="notificacoes" id="notificacoes" aria-live="polite"></div>
+
+    <main class="tela-login" id="tela-login" hidden>
+        <form class="login-card" id="form-login">
+            <h2>🔐 Entrar</h2>
+            <p>Acesse o painel do Sabor & Clic.</p>
+
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" autocomplete="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="login-senha">Senha</label>
+                <input type="password" id="login-senha" name="senha" autocomplete="current-password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Entrar</button>
+            <div class="login-cadastro">
+            <p>Ainda não tem uma conta?</p>
+            <button type="button" class="btn btn-secundario" id="btn-ir-cadastro">
+                Criar minha conta
+            </button>
+        </div>
+        </form>
+    </main>
+
+    <main class="tela-login" id="tela-cadastro" hidden>
+    <form class="login-card" id="form-cadastro">
+        <h2>📝 Criar conta</h2>
+        <p>Cadastre-se no Sabor & Clic.</p>
+
+        <div class="form-group">
+            <label for="cadastro-nome">Nome completo</label>
+            <input type="text" id="cadastro-nome" name="nome"
+                maxlength="100" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cadastro-email">Email</label>
+            <input type="email" id="cadastro-email" name="email"
+                autocomplete="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cadastro-senha">Senha</label>
+            <input type="password" id="cadastro-senha" name="senha"
+                minlength="8" autocomplete="new-password" required>
+            <small>Mínimo de 8 caracteres.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="cadastro-endereco">Endereço</label>
+            <input type="text" id="cadastro-endereco" name="endereco"
+                maxlength="255" autocomplete="street-address">
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Criar conta
+        </button>
+
+        <div class="login-cadastro">
+            <p>Já tem uma conta?</p>
+            <button type="button" class="btn btn-secundario"
+                id="btn-voltar-login">
+                Voltar para o login
+            </button>
+        </div>
+        </form>
+    </main>
+
+    <div class="layout" id="layout" hidden>
+
+        <aside class="menu-lateral">
+            <h2>📋 Painel</h2>
+            <nav>
+                <a href="#" data-pagina="inicio">🏠 Início</a>
+                <a href="#" data-pagina="cardapio">📋 Cardápio</a>
+                <a href="#" data-pagina="pedidos">📦 Pedidos</a>
+                <a href="#" data-pagina="cozinha">👨‍🍳 Cozinha</a>
+                <a href="#" data-pagina="reservas">📅 Reservas</a>
+                <a href="#" data-pagina="estoque">📦 Estoque</a>
+                <a href="#" data-pagina="relatorios">📊 Relatórios</a>
+                <a href="#" data-pagina="conta">👤 Minha Conta</a>
+            </nav>
+        </aside>
+
+        <main class="conteudo" id="conteudo"></main>
+
+    </div>
+
+</body>
+
+</html>

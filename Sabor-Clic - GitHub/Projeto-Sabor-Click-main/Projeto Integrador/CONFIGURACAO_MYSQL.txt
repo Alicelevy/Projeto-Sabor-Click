@@ -1,0 +1,22 @@
+CONFIGURAÇÃO DA CONEXÃO COM O MYSQL
+
+1. Instale as dependências na pasta Projeto Integrador:
+   python -m pip install -r ../requirements.txt
+
+2. Faça uma cópia do arquivo .env.example com o nome .env.
+
+3. Preencha DB_USER e DB_PASSWORD com as credenciais locais do MySQL.
+   Não envie o arquivo .env com senhas para o GitHub ou para outras pessoas.
+
+4. Confirme que o banco sabor_clic foi criado e que a tabela pratos possui:
+   id, nome, descricao, preco, ativo, admin_id e categoria.
+
+5. Execute o sistema:
+   python run.py
+
+IMPORTANTE:
+- O arquivo .env.example é apenas um modelo; cada computador deve criar seu próprio .env.
+- O controller de pratos agora usa o MySQL. Os demais controllers ainda possuem dados em memória
+  e serão integrados em etapas posteriores.
+- O usuário administrador autenticado precisa ter um ID existente na tabela usuarios,
+  pois esse ID é utilizado no campo admin_id ao cadastrar pratos.
