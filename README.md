@@ -16,21 +16,27 @@ O projeto utiliza:
 
 ## 2. Organização dos arquivos
 
-O arquivo `requirements.txt` está localizado na pasta externa, enquanto o código principal está dentro da pasta `Projeto Integrador`.
+Todos os arquivos do projeto ficam na pasta principal do repositório.
 
 Estrutura simplificada:
 
 ```text
 Pasta principal/
+├── run.py
 ├── requirements.txt
 ├── README.md
-└── Projeto Integrador/
-    ├── run.py
-    ├── .env.example
-    ├── CONFIGURACAO_MYSQL.txt
-    ├── database/
-    │   └── sabor_clic_banco.sql
-    └── app/
+├── .env.example
+├── CONFIGURACAO_MYSQL.txt
+├── configurar_senhas_demo.py
+├── database/
+│   └── sabor_clic_banco.sql
+└── app/
+    ├── controllers/
+    ├── models/
+    ├── static/
+    │   ├── css/
+    │   └── js/
+    └── views/
 ```
 
 ## 3. Requisitos para execução
@@ -42,7 +48,7 @@ Antes de iniciar, instale:
 
 ## 4. Instalação das dependências
 
-Abra o terminal na **pasta principal**, onde está localizado o arquivo `requirements.txt`.
+Abra o terminal na **pasta principal** do projeto.
 
 Crie e ative o ambiente virtual:
 
@@ -57,20 +63,24 @@ Instale as dependências:
 python -m pip install -r requirements.txt
 ```
 
-**Importante:** execute esse comando na pasta em que o `requirements.txt` está localizado, e não dentro de `Projeto Integrador`.
-
 ## 5. Configuração do banco de dados
 
 1. Inicie o serviço do MySQL.
-2. Abra o MySQL Workbench.
-3. Importe o arquivo `Projeto Integrador/database/sabor_clic_banco.sql`.
-4. Execute o script para criar o banco de dados e suas tabelas.
+2. Abra o MySQL Workbench ou o DBeaver e conecte em `localhost`, porta `3306`.
+3. Crie o banco de dados (o script SQL cria apenas as tabelas, não o banco):
 
-Consulte o arquivo `CONFIGURACAO_MYSQL.txt`, localizado na pasta `Projeto Integrador`, para orientações adicionais.
+```sql
+CREATE DATABASE sabor_clic CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+4. Selecione o banco `sabor_clic` e abra o arquivo `database/sabor_clic_banco.sql`.
+5. Execute o script inteiro para criar as tabelas e inserir os dados iniciais (no DBeaver, use **Alt+X**).
+
+Consulte o arquivo `CONFIGURACAO_MYSQL.txt`, localizado na raiz do projeto, para orientações adicionais.
 
 ## 6. Configuração do arquivo .env
 
-Dentro da pasta `Projeto Integrador`, copie o arquivo `.env.example` e renomeie a cópia para `.env`.
+Copie o arquivo `.env.example` e renomeie a cópia para `.env`.
 
 Configure as variáveis de ambiente com os dados do seu computador:
 
@@ -92,19 +102,13 @@ O arquivo `.env` contém informações confidenciais e não deve ser compartilha
 
 Após instalar as dependências e configurar o banco de dados e o arquivo `.env`:
 
-1. No terminal, entre na pasta `Projeto Integrador`:
-
-```bash
-cd "Projeto Integrador"
-```
-
-2. Execute a aplicação:
+1. Execute a aplicação:
 
 ```bash
 python run.py
 ```
 
-3. Com o servidor iniciado, acesse no navegador:
+2. Com o servidor iniciado, acesse no navegador:
 
 ```text
 http://127.0.0.1:5000/
